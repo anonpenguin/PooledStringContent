@@ -1,6 +1,8 @@
 # PooledStringContent
 
-A drop-in replacement for `StringContent` you can use to cut down on memory usage in your .NET library/application.
+## What is it?
+
+If you're writing a .NET library/app that sends HTTP requests, then you may have used the `StringContent` class to translate strings to an `HttpContent`, which you can PUT/POST with. `PooledStringContent` is a drop-in replacement for `StringContent` you can use to cut down on memory usage in your library/app.
 
 ## Installation
 
