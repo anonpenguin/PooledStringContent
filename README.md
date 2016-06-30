@@ -1,6 +1,8 @@
 # PooledStringContent
 
-A drop-in replacement for `StringContent` you can use to cut down on memory usage in your .NET library/application.
+## What is it?
+
+If you're writing a .NET library/app that sends HTTP requests, then you may have used the `StringContent` class to translate strings to an `HttpContent`, which you can PUT/POST with. `PooledStringContent` is a drop-in replacement for `StringContent` you can use to cut down on memory usage in your library/app.
 
 ## Installation
 
@@ -35,6 +37,8 @@ Encodings other than UTF-8 are also supported, e.g. you can write `new PooledStr
 ## What benefits does it offer?
 
 Performance. If your application/library is using a lot of memory when making HTTP requests, then this may help as it uses buffer pooling for the encoded bytes. It rents these buffers using the new [ArrayPool APIs](https://github.com/dotnet/corefx/blob/master/src/System.Buffers/src/System/Buffers/ArrayPool.cs) added to .NET Core.
+
+If you're interested more in how it works, take a look at the source code [here.](src/Pooling.Net.Http/PooledStringContent.cs)
 
 ## Is this only compatible with .NET Core?
 
