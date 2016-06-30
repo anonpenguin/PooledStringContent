@@ -114,6 +114,26 @@ public async Task<HttpResponseMessage> Foo()
 
 See [this StackOverflow question](http://stackoverflow.com/q/31195467/4077294) for more on this.
 
+## Building
+
+Interested in building the repo? Please make sure you have the [.NET Core RTM tooling](https://www.microsoft.com/net/core) installed.
+
+To build the source:
+
+```bash
+cd src
+dotnet restore
+dotnet build
+```
+
+To run tests:
+
+```bash
+cd test
+dotnet restore
+dotnet test
+```
+
 ## License
 
 [MIT](LICENSE)
