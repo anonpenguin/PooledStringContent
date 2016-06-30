@@ -111,3 +111,5 @@ public async Task<HttpResponseMessage> Foo()
     }
 }
 ```
+
+See [this StackOverflow question](http://stackoverflow.com/q/31195467/4077294) for more on this.
