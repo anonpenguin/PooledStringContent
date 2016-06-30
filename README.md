@@ -38,6 +38,8 @@ Encodings other than UTF-8 are also supported, e.g. you can write `new PooledStr
 
 Performance. If your application/library is using a lot of memory when making HTTP requests, then this may help as it uses buffer pooling for the encoded bytes. It rents these buffers using the new [ArrayPool APIs](https://github.com/dotnet/corefx/blob/master/src/System.Buffers/src/System/Buffers/ArrayPool.cs) added to .NET Core.
 
+If you're interested more in how it works, take a look at the source code [here.](src/Pooling.Net.Http/PooledStringContent.cs)
+
 ## Is this only compatible with .NET Core?
 
 No, it should be compatible with the .NET Framework/other environments as well, because it targets the [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md).
