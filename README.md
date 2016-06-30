@@ -98,7 +98,7 @@ public Task<HttpResponseMessage> Foo()
 }
 ```
 
-But wait! `PostAsync` is no longer the last operation in the method, since after it's returned `content.Dispose` is called in a `finally` block. (`using` expands to a `try-finally` block when compiled.) This means that if the `HttpClient` attempts to read from the content after performing an asynchronous operation, the content will already have been disposed and is no longer valid.
+But wait! `PostAsync` is no longer the last operation in the method, since after it's returned `content.Dispose` is called in a `finally` block. (`using` expands to a `try-finally` block when compiled.) This means that if the `HttpClient` attempts to read from the content after performing an asynchronous operation, the content will already have been disposed and will no longer be valid.
 
 The fix for this is to switch back to using async/await:
 
